@@ -1,2 +1,2 @@
-# dependencias-tamaulipas
-Theme para Dependencias del Gobierno de Tamaulipas
+# municipios-tamaulipas
+Theme para Municipios del Estado de Tamaulipas
