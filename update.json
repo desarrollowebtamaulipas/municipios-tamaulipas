@@ -1,0 +1,8 @@
+{
+  "name": "Municipios Tamaulipas",
+  "slug": "municipios-tamaulipas-main",
+  "version": "1.0",
+  "download_url": "https://github.com/desarrollowebtamaulipas/municipios-tamaulipas/archive/refs/heads/main.zip",
+  "tested": "6.7.2",
+  "requires": "5.9"
+}

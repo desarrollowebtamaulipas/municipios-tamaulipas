@@ -1,0 +1,4 @@
+= 1.0 =
+Fecha: 27 de Marzo de 2026
+
+* [Add] Primer release
