@@ -156,57 +156,67 @@
 	add_filter('post_gallery', 'replace_gallery_with_swiper', 10, 2);
 	
 // Actualización por Github
-	class MunicipiosTamaulipasThemeUpdater {
-		private $theme_slug = 'municipios-tamaulipas-main';
-		private $update_url = 'https://raw.githubusercontent.com/desarrollowebtamaulipas/municipios-tamaulipas/refs/heads/main/update.json';
-	
-		public function __construct() {
-			add_filter('site_transient_update_themes', [$this, 'check_for_updates']);
-			add_action('upgrader_process_complete', [$this, 'clear_cache'], 10, 2);
-		}
-	
-		public function check_for_updates($transient) {
-			if (empty($transient->checked)) {
-				return $transient;
-			}
-	
-			$remote = $this->get_remote_info();
-			if (!$remote || version_compare($remote['version'], $transient->checked[$this->theme_slug], '<=')) {
-				return $transient;
-			}
-	
-			$transient->response[$this->theme_slug] = [
-				'theme'       => $this->theme_slug,
-				'new_version' => $remote['version'],
-				'url'         => $remote['download_url'],
-				'package'     => $remote['download_url'],
-			];
-	
+class MunicipiosTamaulipasThemeUpdater {
+	private $theme_slug = 'municipios-tamaulipas-main';
+	private $update_url = 'https://raw.githubusercontent.com/desarrollowebtamaulipas/municipios-tamaulipas/refs/heads/main/update.json';
+
+	public function __construct() {
+		// En multisite, este filtro es vital que corra siempre
+		add_filter('pre_set_site_transient_update_themes', [$this, 'check_for_updates']);
+		add_action('upgrader_process_complete', [$this, 'clear_cache'], 10, 2);
+	}
+
+	public function check_for_updates($transient) {
+		// Si no hay datos de chequeo, retornamos
+		if (empty($transient->checked)) {
 			return $transient;
 		}
-	
-		public function clear_cache($upgrader, $options) {
-			if ($options['action'] === 'update' && $options['type'] === 'theme') {
-				delete_transient($this->theme_slug . '_update_info');
-			}
+
+		$remote = $this->get_remote_info();
+		
+		// Validamos que el slug exista en los temas instalados para evitar errores
+		$current_version = isset($transient->checked[$this->theme_slug]) ? $transient->checked[$this->theme_slug] : '0.0.0';
+
+		if (!$remote || version_compare($remote['version'], $current_version, '<=')) {
+			return $transient;
 		}
-	
-		private function get_remote_info() {
-			$remote = get_transient($this->theme_slug . '_update_info');
-			if ($remote === false) {
-				$response = wp_remote_get($this->update_url, ['timeout' => 10]);
-				if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) {
-					return false;
-				}
-	
-				$remote = json_decode(wp_remote_retrieve_body($response), true);
-				set_transient($this->theme_slug . '_update_info', $remote, 12 * HOUR_IN_SECONDS);
-			}
-	
-			return $remote;
+
+		$transient->response[$this->theme_slug] = [
+			'theme'       => $this->theme_slug,
+			'new_version' => $remote['version'],
+			'url'         => $remote['download_url'],
+			'package'     => $remote['download_url'],
+		];
+
+		return $transient;
+	}
+
+	public function clear_cache($upgrader, $options) {
+		if (isset($options['action']) && $options['action'] === 'update' && $options['type'] === 'theme') {
+			// Usamos delete_site_transient para asegurar limpieza en la red
+			delete_site_transient($this->theme_slug . '_update_info');
 		}
 	}
-	
-	new MunicipiosTamaulipasThemeUpdater();
+
+	private function get_remote_info() {
+		// Usamos get_site_transient
+		$remote = get_site_transient($this->theme_slug . '_update_info');
+		
+		if ($remote === false) {
+			$response = wp_remote_get($this->update_url, ['timeout' => 15]);
+			if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) {
+				return false;
+			}
+
+			$remote = json_decode(wp_remote_retrieve_body($response), true);
+			// Guardamos con set_site_transient
+			set_site_transient($this->theme_slug . '_update_info', $remote, 12 * HOUR_IN_SECONDS);
+		}
+
+		return $remote;
+	}
+}
+
+new MunicipiosTamaulipasThemeUpdater();
 
 ?>
