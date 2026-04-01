@@ -157,65 +157,50 @@
 	
 // Actualización por Github
 	class MunicipiosTamaulipasThemeUpdater {
-		private $theme_slug;
+		private $theme_slug = 'municipios-tamaulipas-main';
 		private $update_url = 'https://raw.githubusercontent.com/desarrollowebtamaulipas/municipios-tamaulipas/refs/heads/main/update.json';
 	
 		public function __construct() {
-			// Obtenemos el slug dinámicamente del directorio actual para evitar errores de dedo
-			$this->theme_slug = basename(get_template_directory());
-	
-			// Usamos una prioridad alta (99) para asegurar que nuestra respuesta no sea sobreescrita
-			add_filter('site_transient_update_themes', [$this, 'check_for_updates'], 99);
-			add_filter('pre_set_site_transient_update_themes', [$this, 'check_for_updates'], 99);
+			add_filter('site_transient_update_themes', [$this, 'check_for_updates']);
+			add_action('upgrader_process_complete', [$this, 'clear_cache'], 10, 2);
 		}
 	
 		public function check_for_updates($transient) {
-			// En multisite, a veces el objeto llega vacío al principio
-			if (!$transient) {
-				$transient = new stdClass();
+			if (empty($transient->checked)) {
+				return $transient;
 			}
 	
 			$remote = $this->get_remote_info();
-			
-			if (!$remote) return $transient;
-	
-			// Buscamos la versión instalada actual
-			$theme = wp_get_theme($this->theme_slug);
-			$current_version = $theme->exists() ? $theme->get('Version') : '0.0.0';
-	
-			// Si la versión remota es mayor, inyectamos la actualización
-			if (version_compare($remote['version'], $current_version, '>')) {
-				$res = [
-					'theme'       => $this->theme_slug,
-					'new_version' => $remote['version'],
-					'url'         => $remote['download_url'],
-					'package'     => $remote['download_url'],
-				];
-	
-				// Inyectamos en la respuesta
-				$transient->response[$this->theme_slug] = $res;
+			if (!$remote || version_compare($remote['version'], $transient->checked[$this->theme_slug], '<=')) {
+				return $transient;
 			}
+	
+			$transient->response[$this->theme_slug] = [
+				'theme'       => $this->theme_slug,
+				'new_version' => $remote['version'],
+				'url'         => $remote['download_url'],
+				'package'     => $remote['download_url'],
+			];
 	
 			return $transient;
 		}
 	
-		private function get_remote_info() {
-			// Usamos un nombre de transiente único y forzamos su limpieza si es necesario
-			$transient_name = 'gh_update_' . $this->theme_slug;
-			$remote = get_site_transient($transient_name);
-			
-			if ($remote === false) {
-				$response = wp_remote_get($this->update_url, [
-					'timeout' => 15,
-					'sslverify' => true 
-				]);
+		public function clear_cache($upgrader, $options) {
+			if ($options['action'] === 'update' && $options['type'] === 'theme') {
+				delete_transient($this->theme_slug . '_update_info');
+			}
+		}
 	
+		private function get_remote_info() {
+			$remote = get_transient($this->theme_slug . '_update_info');
+			if ($remote === false) {
+				$response = wp_remote_get($this->update_url, ['timeout' => 10]);
 				if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) {
 					return false;
 				}
 	
 				$remote = json_decode(wp_remote_retrieve_body($response), true);
-				set_site_transient($transient_name, $remote, 2 * HOUR_IN_SECONDS);
+				set_transient($this->theme_slug . '_update_info', $remote, 12 * HOUR_IN_SECONDS);
 			}
 	
 			return $remote;
