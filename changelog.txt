@@ -1,3 +1,9 @@
+= 1.0.1 =
+Fecha 1 de abril de 2026
+
+* [Add] Thumbnail
+* [Improve] Github tests
+
 = 1.0 =
 Fecha: 27 de Marzo de 2026
 
