@@ -1,4 +1,4 @@
-= 1.0.2 =
+= 1.0.2.1 =
 Fecha 1 de abril de 2026
 
 * [Add] Thumbnail
