@@ -1,4 +1,4 @@
-<?php if( have_rows('directorio_funcionario', 'option') ): ?>
+<?php if( have_rows('cabildo_regidor', 'option') ): ?>
 
 <!-- Directorio -->
 <section id="directorio" class="seccion">
@@ -17,10 +17,10 @@
 			
 			<?php
 			
-				while( have_rows('directorio_funcionario', 'option') ): the_row();
-				$foto   = get_sub_field('directorio_foto', 'option');
-				$nombre = get_sub_field('directorio_nombre', 'option');
-				$puesto = get_sub_field('directorio_puesto', 'option');
+				while( have_rows('cabildo_regidor', 'option') ): the_row();
+				$foto   = get_sub_field('regidor_foto', 'option');
+				$nombre = get_sub_field('regidor_nombre', 'option');
+				$puesto = get_sub_field('regidor_puesto', 'option');
 			
 			?>
 			
@@ -28,9 +28,11 @@
 				
 				<div class="card">
 					<?php if($foto): ?>
-						<img src="<?php echo wp_get_attachment_image_url($foto, 'post-thumbnail'); ?>" class="img-boletin " alt="<?php echo esc_html($nombre); ?>">
+						<img src="<?php echo wp_get_attachment_image_url($foto, 'post-thumbnail'); ?>" class="img-regidor " alt="<?php echo esc_html($nombre); ?>">
 					<?php else : ?>
-						<img src="<?php bloginfo('template_directory'); ?>/assets/img/escudo-tamaulipas.svg" class="img-boletin" alt="<?php echo esc_html($puesto); ?>"> 
+						<span class="img-regidor escudo">
+							<img src="<?php the_field('identidad_logo_blanco', 'option'); ?>" alt="<?php echo esc_html($puesto); ?>"> 
+						</span>
 					<?php endif; ?>
 					<div class="card-body">
 						<h5 class="card-title"><?php echo esc_html($nombre); ?></h5>

@@ -152,6 +152,18 @@ h6 {
 	z-index: 1;
 }
 
+#header .slogan-home {
+	z-index: 1;
+	transition: all 0.4s ease-in-out;
+	height: 90px;
+	position: relative;
+}
+
+#header .slogan-home .logo {
+	max-height: 50px;
+	z-index: 1;
+}
+
 #contenido-fix {
 	position: relative;
 	z-index: 99;
@@ -976,10 +988,20 @@ h6 {
 	margin-bottom: 30px;
 }
 
-#directorio .item-directorio .img-boletin{
+#directorio .item-directorio .img-regidor{
 	border-radius: 50%;
 	height: 100px;
 	width: 100px;
+}
+
+#directorio .item-directorio .img-regidor.escudo{
+	background: #eee;
+}
+
+#directorio .item-directorio .img-regidor.escudo img{
+	width: 70px;
+	height: 70px;
+	margin: 15px;
 }
 
 #directorio .item-directorio .card{

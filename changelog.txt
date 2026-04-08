@@ -1,5 +1,12 @@
+= 1.0.3 =
+Fecha: 7 de Abril de 2026
+
+* [Add] Page Template: Cabildo
+* [Add] ACF Json para forzar sincronización
+* [Add] Slogan dinamico del Municipio al Header
+
 = 1.0.2.3 =
-Fecha 1 de abril de 2026
+Fecha: 1 de Abril de 2026
 
 * [Add] Thumbnail
 * [Improve] Github tests

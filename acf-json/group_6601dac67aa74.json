@@ -1,0 +1,140 @@
+{
+    "key": "group_6601dac67aa74",
+    "title": "Información de Contacto",
+    "fields": [
+        {
+            "key": "field_6601dac6e9d60",
+            "label": "Dirección Postal",
+            "name": "contacto_direccion",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_69122e7ea529e",
+            "label": "Telefonos",
+            "name": "contacto_telefonos",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "pagination": 0,
+            "min": 0,
+            "max": 5,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6601db15e9d61",
+                    "label": "Telefono",
+                    "name": "contacto_telefono",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 30,
+                    "allow_in_bindings": 1,
+                    "placeholder": "(LADA) 000-0000",
+                    "prepend": "+52",
+                    "append": "",
+                    "parent_repeater": "field_69122e7ea529e"
+                }
+            ]
+        },
+        {
+            "key": "field_6601efdbc4564",
+            "label": "Contacto",
+            "name": "contacto_contacto",
+            "aria-label": "",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "allow_archives": 0,
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_661eb422d34ed",
+            "label": "Mapa",
+            "name": "contacto_mapa",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Ir a <a href=\"https:\/\/maps.google.com\/\" target=\"_blank\">Google Maps<\/a>, buscar la ubicación y seleccionar <strong>\"Compartir\"<\/strong>, en la ventana emergente cambiar a la pestaña <strong>Insertar un mapa<\/strong> y dar click en el botón <strong>COPIAR HTML<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "configuraciones"
+            }
+        ]
+    ],
+    "menu_order": 5,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1775512772
+}

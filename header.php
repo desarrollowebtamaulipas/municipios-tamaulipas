@@ -62,13 +62,19 @@
 			<div id="logo-buscador">
 				<div class="container-lg">
 					<div class="row">
-					
-						<div class="col-8 col-sm-6 col-md-6 col-lg-6 col-xl-6 logo-home d-flex align-items-center">
-							<a href="<?php bloginfo('url') ?>"><img src="<?php the_field( 'identidad_logo', 'options' ); ?>" alt="<?php the_field( 'identidad_nombre', 'options' ); ?>" class="img-fluid logo"></a>
+						
+						<?php $slogan = get_field( 'identidad_slogan', 'options' ); ?> 
+						
+						<?php if (!$slogan) { ?>
+							<div class="col-8 col-sm-6 col-md-6 col-lg-6 col-xl-6 logo-home d-flex align-items-center">
+						<?php } else { ?>
+							<div class="col-8 col-sm-6 col-md-6 col-lg-3 col-xl-3 logo-home d-flex align-items-center">
+						<?php } ?>
+							<a href="<?php bloginfo('url'); ?>"><img src="<?php the_field( 'identidad_logo', 'options' ); ?>" alt="<?php the_field( 'identidad_nombre', 'options' ); ?>" class="img-fluid logo"></a>
 						</div>
-					
+						
 						<div class="col-4 col-sm-6 col-md-6 col-lg-6 col-xl-6 logo-home d-flex align-items-center justify-content-end">
-					
+							
 							<div class="buscador-header w-100 d-none d-sm-none d-md-none d-lg-block">
 								<form class="form-buscador form-group" method="get" action="<?php bloginfo('home'); ?>"> 
 									<input type="hidden" name="buscar" value="pages">
@@ -92,11 +98,19 @@
 											<span></span>
 										</div>
 									</label>
-									</form>
+								</form>
 							</div>
 							<!-- /Botón Menú Responsivo -->
-					
+								
 						</div>
+						
+						<?php if (!$slogan) { } else { ?>
+						<div class="col-lg-3 col-xl-3 d-none d-sm-none d-md-none d-lg-block">
+							<div class="slogan-home d-flex align-items-center justify-content-end">
+								<img src="<?php echo $slogan; ?>" alt="<?php the_field( 'identidad_nombre', 'options' ); ?>" class="img-fluid logo">
+							</div>
+						</div>
+						<?php } ?>
 					
 					</div>
 				</div> 

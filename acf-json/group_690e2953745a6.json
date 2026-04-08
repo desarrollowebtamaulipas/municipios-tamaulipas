@@ -1,0 +1,169 @@
+{
+    "key": "group_690e2953745a6",
+    "title": "Información del Municipio",
+    "fields": [
+        {
+            "key": "field_690e29537266e",
+            "label": "Mensaje de bienvenida",
+            "name": "dependencia_mensaje",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Mensaje limitado a 1000 caracteres",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "74",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 1000,
+            "allow_in_bindings": 0,
+            "rows": 6,
+            "placeholder": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_690e76ce47758",
+            "label": "Leer más",
+            "name": "dependencia_leer_mas",
+            "aria-label": "",
+            "type": "page_link",
+            "instructions": "Seleccionar la pagina interna",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "allow_archives": 0,
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_690e2ad77266f",
+            "label": "Foto del titular",
+            "name": "dependencia_foto_titular",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg, jpeg, png, webp",
+            "allow_in_bindings": 0,
+            "preview_size": "post-thumbnail"
+        },
+        {
+            "key": "field_690e435e72670",
+            "label": "Nombre del titular",
+            "name": "dependencia_nombre_titular",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 60,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_690e43a472671",
+            "label": "Puesto del titular",
+            "name": "dependencia_puesto_titular",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 100,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_690e43f472673",
+            "label": "Semblanza",
+            "name": "dependencia_semblanza",
+            "aria-label": "",
+            "type": "page_link",
+            "instructions": "Seleccionar la pagina interna",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "allow_archives": 0,
+            "multiple": 0,
+            "allow_null": 1,
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "configuraciones"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1775512744
+}
