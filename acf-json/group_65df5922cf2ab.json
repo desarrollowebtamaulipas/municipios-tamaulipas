@@ -52,7 +52,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<img style=\"max-width:100%; height: auto;\" src=\"https:\/\/www.tamaulipas.gob.mx\/assets\/instrucciones\/imagen-portada.png\">",
+            "message": "<img style=\"max-width:100%; height: auto;\" src=\"https:\/\/www.tamaulipas.gob.mx\/assets\/instrucciones\/imagen-portada-dependencias.webp\">",
             "new_lines": "wpautop",
             "esc_html": 0
         },
@@ -150,5 +150,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1775512733
+    "modified": 1775679727
 }
