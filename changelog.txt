@@ -1,4 +1,4 @@
-= 1.0.3.2 =
+= 1.0.3.3 =
 Fecha: 7 de Abril de 2026
 
 * [Add] Page Template: Cabildo

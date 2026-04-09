@@ -21,7 +21,7 @@
 							
 							<?php
 								$attachment_id = get_sub_field('imagen');
-								$size = 'post-thumbnail';
+								$size = 'prensa';
 								$image = wp_get_attachment_image_src( $attachment_id, $size );
 								$link = get_sub_field('link');
 							?>
@@ -44,7 +44,7 @@
 							
 							<?php
 								$attachment_id = get_sub_field('imagen');
-								$size = 'post-thumbnail';
+								$size = 'prensa';
 								$image = wp_get_attachment_image_src( $attachment_id, $size );
 								$link = get_sub_field('link');
 							?>
@@ -67,7 +67,7 @@
 							
 							<?php
 								$attachment_id = get_sub_field('imagen');
-								$size = 'post-thumbnail';
+								$size = 'prensa';
 								$image = wp_get_attachment_image_src( $attachment_id, $size );
 								$link = get_sub_field('link');
 							?>
@@ -90,7 +90,7 @@
 							
 							<?php
 								$attachment_id = get_sub_field('imagen');
-								$size = 'post-thumbnail';
+								$size = 'prensa';
 								$image = wp_get_attachment_image_src( $attachment_id, $size );
 								$link = get_sub_field('link');
 							?>
