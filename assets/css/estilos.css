@@ -1174,7 +1174,7 @@ article.article-content .entry b {
 
 article.article-content .entry a:not(.btn, .alert-link) {
 	color: var(--primario-o);
-	font-weight: 600;
+	font-weight: 500;
 }
 
 article.article-content .entry img {
