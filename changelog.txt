@@ -1,9 +1,10 @@
-= 1.0.3.1 =
+= 1.0.3.2 =
 Fecha: 7 de Abril de 2026
 
 * [Add] Page Template: Cabildo
 * [Add] ACF Json para forzar sincronización
 * [Add] Slogan dinamico del Municipio al Header
+* [Improve] Prefijo en teléfonos de contacto
 
 = 1.0.2.3 =
 Fecha: 1 de Abril de 2026

@@ -22,29 +22,12 @@
 						$attachment_id = get_sub_field('imagen');
 						$size = 'post-thumbnail';
 						$image = wp_get_attachment_image_src( $attachment_id, $size );
+						$link = get_sub_field('link');
 					?>
 					
-					<img src="<?php echo $image[0]; ?>" alt="<?php the_sub_field('titulo'); ?>" class="img-fluid">
+					<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? $link['target'] : '_self'; ?>"><img src="<?php echo $image[0]; ?>" alt="<?php echo $link['title']; ?>" class="img-fluid"></a>
 					
-					<h4 class="text-center"><?php the_sub_field('titulo'); ?></h4>
-					
-					<?php $lista = get_sub_field('lista'); if( $lista ): ?>
-						
-						<ul class="clean-list lista-temas">
-							
-							<?php 
-								foreach( $lista as $li ):
-								$link 	= get_permalink( $li->ID );
-								$title	= get_the_title( $li->ID );
-							?>
-								<li><a href="<?php echo esc_url( $link ); ?>" class="d-block"><?php echo esc_html( $title ); ?></a></li> 
-							<?php endforeach; ?>
-						
-						</ul>
-					
-					<?php endif; ?>
-					
-					<?php the_sub_field('menu'); ?>
+					<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? $link['target'] : '_self'; ?>"><h4 class="text-center"><?php echo $link['title']; ?></h4></a>
 			
 				</div>
 			</div>
@@ -60,29 +43,12 @@
 						$attachment_id = get_sub_field('imagen');
 						$size = 'post-thumbnail';
 						$image = wp_get_attachment_image_src( $attachment_id, $size );
+						$link = get_sub_field('link');
 					?>
 					
-					<img src="<?php echo $image[0]; ?>" alt="<?php the_sub_field('titulo'); ?>" class="img-fluid">
+					<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? $link['target'] : '_self'; ?>"><img src="<?php echo $image[0]; ?>" alt="<?php echo $link['title']; ?>" class="img-fluid"></a>
 					
-					<h4 class="text-center"><?php the_sub_field('titulo'); ?></h4>
-					
-					<?php $lista = get_sub_field('lista'); if( $lista ): ?>
-						
-						<ul class="clean-list lista-temas">
-							
-							<?php 
-								foreach( $lista as $li ):
-								$link 	= get_permalink( $li->ID );
-								$title	= get_the_title( $li->ID );
-							?>
-								<li><a href="<?php echo esc_url( $link ); ?>" class="d-block"><?php echo esc_html( $title ); ?></a></li> 
-							<?php endforeach; ?>
-						
-						</ul>
-					
-					<?php endif; ?>
-					
-					<?php the_sub_field('menu'); ?>
+					<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? $link['target'] : '_self'; ?>"><h4 class="text-center"><?php echo $link['title']; ?></h4></a>
 						
 			
 				</div>
@@ -99,29 +65,12 @@
 						$attachment_id = get_sub_field('imagen');
 						$size = 'post-thumbnail';
 						$image = wp_get_attachment_image_src( $attachment_id, $size );
+						$link = get_sub_field('link');
 					?>
 					
-					<img src="<?php echo $image[0]; ?>" alt="<?php the_sub_field('titulo'); ?>" class="img-fluid">
+					<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? $link['target'] : '_self'; ?>"><img src="<?php echo $image[0]; ?>" alt="<?php echo $link['title']; ?>" class="img-fluid"></a>
 					
-					<h4 class="text-center"><?php the_sub_field('titulo'); ?></h4>
-					
-					<?php $lista = get_sub_field('lista'); if( $lista ): ?>
-											
-						<ul class="clean-list lista-temas">
-							
-							<?php 
-								foreach( $lista as $li ):
-								$link 	= get_permalink( $li->ID );
-								$title	= get_the_title( $li->ID );
-							?>
-								<li><a href="<?php echo esc_url( $link ); ?>" class="d-block"><?php echo esc_html( $title ); ?></a></li> 
-							<?php endforeach; ?>
-						
-						</ul>
-					
-					<?php endif; ?>
-					
-					<?php the_sub_field('menu'); ?>
+					<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? $link['target'] : '_self'; ?>"><h4 class="text-center"><?php echo $link['title']; ?></h4></a>
 			
 				</div>
 			</div>
@@ -137,29 +86,12 @@
 						$attachment_id = get_sub_field('imagen');
 						$size = 'post-thumbnail';
 						$image = wp_get_attachment_image_src( $attachment_id, $size );
+						$link = get_sub_field('link');
 					?>
 					
-					<img src="<?php echo $image[0]; ?>" alt="<?php the_sub_field('titulo'); ?>" class="img-fluid">
+					<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? $link['target'] : '_self'; ?>"><img src="<?php echo $image[0]; ?>" alt="<?php echo $link['title']; ?>" class="img-fluid"></a>
 					
-					<h4 class="text-center"><?php the_sub_field('titulo'); ?></h4>
-					
-					<?php $lista = get_sub_field('lista'); if( $lista ): ?>
-						
-						<ul class="clean-list lista-temas">
-							
-							<?php 
-								foreach( $lista as $li ):
-								$link 	= get_permalink( $li->ID );
-								$title	= get_the_title( $li->ID );
-							?>
-								<li><a href="<?php echo esc_url( $link ); ?>" class="d-block"><?php echo esc_html( $title ); ?></a></li> 
-							<?php endforeach; ?>
-						
-						</ul>
-					
-					<?php endif; ?>
-					
-					<?php the_sub_field('menu'); ?>
+					<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target'] ? $link['target'] : '_self'; ?>"><h4 class="text-center"><?php echo $link['title']; ?></h4></a>
 			
 				</div>
 			</div>

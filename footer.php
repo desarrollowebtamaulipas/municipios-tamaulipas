@@ -21,7 +21,7 @@
 							<p>
 								<?php the_field('contacto_direccion', 'options'); ?><br>
 								<?php if( have_rows('contacto_telefonos', 'option') ): while( have_rows('contacto_telefonos', 'option') ): the_row(); ?>
-									Tel: <?php the_sub_field('contacto_telefono', 'options'); ?><br>
+									<?php the_sub_field('contacto_prefijo', 'options'); ?> <?php the_sub_field('contacto_telefono', 'options'); ?><br>
 								<?php endwhile; endif; ?>
 							</p>
 						</div> 

@@ -36,7 +36,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "row",
+            "layout": "table",
             "pagination": 0,
             "min": 0,
             "max": 5,
@@ -44,6 +44,28 @@
             "button_label": "Add Row",
             "rows_per_page": 20,
             "sub_fields": [
+                {
+                    "key": "field_69d6ee3c6d511",
+                    "label": "Prefijo",
+                    "name": "contacto_prefijo",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Teléfono:",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_69122e7ea529e"
+                },
                 {
                     "key": "field_6601db15e9d61",
                     "label": "Telefono",
@@ -54,7 +76,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -136,5 +158,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1775512772
+    "modified": 1775693616
 }
