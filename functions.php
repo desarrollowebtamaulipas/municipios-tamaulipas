@@ -154,5 +154,96 @@
 
 // Reemplazar la salida de la galería nativa con Swiper
 	add_filter('post_gallery', 'replace_gallery_with_swiper', 10, 2);
+	
+
+// Registrar Menús para el Theme
+	function setup_menus_al_activar_tema() {
+		
+		// Nombres y ubicaciones
+		$menus_a_crear = array(
+			'menu-principal'  => 'Menú Principal',
+			'menu-secundario' => 'Menú Secundario',
+			'menu-inferior'   => 'Menú Inferior'
+		);
+	
+		// Obtener las ubicaciones actuales para no borrar otras configuraciones
+		$locations = get_theme_mod( 'nav_menu_locations' );
+	
+		foreach ( $menus_a_crear as $id_location => $nombre_menu ) {
+			
+			// Verificar si el menú ya existe para evitar duplicados
+			$menu_exists = wp_get_nav_menu_object( $nombre_menu );
+			
+			if ( ! $menu_exists ) {
+				// Crear el menú
+				$menu_id = wp_create_nav_menu( $nombre_menu );
+	
+				// Agregar elementos a los menús
+				if ( $id_location == 'menu-principal' || $id_location == 'menu-inferior' ) {
+					wp_update_nav_menu_item( $menu_id, 0, array(
+						'menu-item-title'  => __( 'Inicio', 'textdomain' ),
+						'menu-item-url'    => home_url( '/' ),
+						'menu-item-status' => 'publish',
+						'menu-item-type'   => 'custom',
+					) );
+				}
+				
+				if ( $id_location == 'menu-secundario' ) {
+					
+					wp_update_nav_menu_item( $menu_id, 0, array(
+						'menu-item-title'  => __( 'Gobierno de Tamaulipas', 'textdomain' ),
+						'menu-item-url'    => 'https://www.tamaulipas.gob.mx/',
+						'menu-item-status' => 'publish',
+						'menu-item-type'   => 'custom',
+					) );
+				
+					$parent_id = wp_update_nav_menu_item( $menu_id, 0, array(
+						'menu-item-title'  => __( 'Servicios en línea', 'textdomain' ),
+						'menu-item-url'    => '#',
+						'menu-item-status' => 'publish',
+						'menu-item-type'   => 'custom',
+					) );
+				
+					$servicios = array(
+						'Consulta de acta de nacimiento'		=> 'https://www.gob.mx/ActaNacimiento/folioSeguimiento/',
+						'Consulta de CURP'						=> 'https://www.gob.mx/curp/',
+						'Pasaporte'								=> 'https://www.gob.mx/pasaporte/',
+						'Servicio Nacional Militar'				=> 'https://www.gob.mx/defensa/acciones-y-programas/servicio-militar-nacional',
+						'Pago de tenencia vehicular'			=> 'https://finanzas.tamaulipas.gob.mx/pago-de-contribuciones/tenencia.php',
+						'Padrón de proveedores y contratistas' 	=> 'http://www.tamaulipas.gob.mx/padron-de-proveedores/',
+					);
+				
+					foreach ( $servicios as $titulo => $url ) {
+						wp_update_nav_menu_item( $menu_id, 0, array(
+							'menu-item-title'     => $titulo,
+							'menu-item-url'       => $url,
+							'menu-item-status'    => 'publish',
+							'menu-item-type'      => 'custom',
+							'menu-item-parent-id' => $parent_id,
+						) );
+					}
+				}
+	
+				// 3. Asignar el menú creado a su ubicación de tema
+				$locations[ $id_location ] = $menu_id;
+			}
+		}
+	
+		// Guardar la asignación de menús en el tema
+		set_theme_mod( 'nav_menu_locations', $locations );
+	}
+	
+	// Hook que se ejecuta al activar el tema
+	add_action( 'after_switch_theme', 'setup_menus_al_activar_tema' );
+	
+	// No olvides registrar las ubicaciones para que WordPress las reconozca
+	function registrar_mis_ubicaciones_de_menu() {
+		register_nav_menus( array(
+			'menu-principal'  => __( 'Menú Principal', 'textdomain' ),
+			'menu-secundario' => __( 'Menú Secundario', 'textdomain' ),
+			'menu-inferior'   => __( 'Menú Inferior', 'textdomain' ),
+		) );
+	}
+	add_action( 'after_setup_theme', 'registrar_mis_ubicaciones_de_menu' );
 
 ?>

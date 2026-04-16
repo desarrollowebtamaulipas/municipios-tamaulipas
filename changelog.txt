@@ -1,3 +1,10 @@
+= 1.0.4 =
+Fecha 16 de Abril de 2026
+
+* [Improve] Agrega automáticamente los menús y genera el Inicio y Servicios en linea
+* [Add] Campo de galería a las entradas
+* [Fix] Varios grupos de campos se cargaban en las entradas por default.
+
 = 1.0.3.4 =
 Fecha: 7 de Abril de 2026
 

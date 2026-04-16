@@ -133,8 +133,9 @@
 					
 								<?php 
 									wp_nav_menu( array(
-										'menu'			=>	'menu-principal',
-										'menu_class'	=>	'menu clean-list menu-principal'
+										'menu'				=>	'menu-principal',
+										'theme_location'	=>	'menu-principal',
+										'menu_class'		=>	'menu clean-list menu-principal'
 									) );
 								?>
 					
@@ -160,8 +161,9 @@
 							
 							<?php 
 								wp_nav_menu( array(
-									'menu'			=>	'menu-secundario',
-									'menu_class'	=>	'menu clean-list'
+									'menu'				=>	'menu-secundario',
+									'theme_location'	=>	'menu-secundario',
+									'menu_class'		=>	'menu clean-list menu-principal'
 								) );
 							?>
 							
@@ -254,12 +256,14 @@
 				
 										<?php 
 											wp_nav_menu( array(
-												'menu'			=>	'menu-principal',
-												'menu_class'	=>	'nav-menu clean-list menu-principal'
+												'menu'				=>	'menu-principal',
+												'theme_location'	=>	'menu-principal',
+												'menu_class'		=>	'menu clean-list menu-principal'
 											) );
 											wp_nav_menu( array(
-												'menu'			=>	'menu-secundario',
-												'menu_class'	=>	'nav-menu clean-list'
+												'menu'				=>	'menu-secundario',
+												'theme_location'	=>	'menu-secundario',
+												'menu_class'		=>	'nav-menu clean-list'
 											) );
 										?>
 				

@@ -39,8 +39,9 @@
 				
 				<?php 
 					wp_nav_menu( array(
-						'menu'			=>	'menu-inferior',
-						'menu_class'	=>	'informacion-links clean-list'
+						'menu'				=>	'menu-inferior',
+						'theme_location'	=>	'menu-inferior',
+						'menu_class'		=>	'informacion-links clean-list'
 					) );
 				?>
 			
