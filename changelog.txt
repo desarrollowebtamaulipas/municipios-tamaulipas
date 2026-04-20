@@ -1,4 +1,4 @@
-= 1.0.4 =
+= 1.0.4.1 =
 Fecha 16 de Abril de 2026
 
 * [Improve] Agrega automáticamente los menús y genera el Inicio y Servicios en linea
