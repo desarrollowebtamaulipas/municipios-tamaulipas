@@ -50,7 +50,7 @@
         
             <div class="d-flex justify-content-center">
                 <div class="col-md-3 col-12">
-                    <a href="/prensa" class="btn btn-md w-100 text-white bg-primario fw-light">Ir a la Sala de Prensa</a>
+                    <a href="<?php bloginfo('url') ?>/prensa" class="btn btn-md w-100 text-white bg-primario fw-light">Ir a la Sala de Prensa</a>
                 </div>
             </div>
         

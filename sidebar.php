@@ -147,7 +147,7 @@
 			
 			<?php } ?>
 			
-			<a class="btn btn-md w-100 text-white bg-primario fw-light" href="/prensa"> Ir a la Sala de Prensa </a>
+			<a class="btn btn-md w-100 text-white bg-primario fw-light" href="<?php bloginfo('url') ?>/prensa"> Ir a la Sala de Prensa </a>
 		</div>
 		
 		<?php } else { } wp_reset_postdata(); ?>
