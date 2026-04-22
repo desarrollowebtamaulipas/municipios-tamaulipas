@@ -1,4 +1,4 @@
-= 1.0.5.1 =
+= 1.0.5.1.1 =
 Fecha 22 de Abril de 2026
 
 * [Improve] Se movió el cambio de contacto_mapa a Identidad del Municipio para evitar que se borre al actualizar

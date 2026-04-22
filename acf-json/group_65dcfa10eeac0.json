@@ -102,26 +102,6 @@
             "preview_size": "full"
         },
         {
-            "key": "field_661eb422d34ed",
-            "label": "Mapa",
-            "name": "contacto_mapa",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "Ir a <a href=\"https:\/\/maps.google.com\/\" target=\"_blank\">Google Maps<\/a>, buscar la ubicación y seleccionar <strong>\"Compartir\"<\/strong>, en la ventana emergente cambiar a la pestaña <strong>Insertar un mapa<\/strong> y dar click en el botón <strong>COPIAR HTML<\/strong>",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
-        },
-        {
             "key": "field_65dcfa961137a",
             "label": "Color Primario",
             "name": "identidad_color_primario",
@@ -189,6 +169,27 @@
             "show_color_wheel": 1,
             "custom_palette_source": "",
             "palette_colors": ""
+        },
+        {
+            "key": "field_661eb422d34ed",
+            "label": "Mapa",
+            "name": "contacto_mapa",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Ir a <a href=\"https:\/\/maps.google.com\/\" target=\"_blank\">Google Maps<\/a>, buscar la ubicación y seleccionar <strong>\"Compartir\"<\/strong>, en la ventana emergente cambiar a la pestaña <strong>Insertar un mapa<\/strong> y dar click en el botón <strong>COPIAR HTML<\/strong>",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
         }
     ],
     "location": [
@@ -212,5 +213,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1775675948
+    "modified": 1776879445
 }
