@@ -1,16 +1,21 @@
+= 1.0.6 =
+Fecha: 28 de Abril de 2026
+
+* [Fix] Se arreglo el Sticky sidebar cuando se manipulaban Acordeones o Tabs
+
 = 1.0.5.1.2 =
-Fecha 22 de Abril de 2026
+Fecha: 22 de Abril de 2026
 
 * [Improve] Se movió el cambio de contacto_mapa a Identidad del Municipio para evitar que se borre al actualizar
 * [Improve] Url del botón de sala de prensa del index y sidebar incluye bloginfo(url)
 
 = 1.0.5 =
-Fecha 20 de Abril de 2026
+Fecha: 20 de Abril de 2026
 
 * [Add] Plantilla de contacto
 
 = 1.0.4.1 =
-Fecha 16 de Abril de 2026
+Fecha: 16 de Abril de 2026
 
 * [Improve] Agrega automáticamente los menús y genera el Inicio y Servicios en linea
 * [Add] Campo de galería a las entradas
